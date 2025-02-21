@@ -43,3 +43,12 @@ If scenario is if productid is greater tha n 100 than also show not found compon
 it will show global not-found component . but in order show specific screen than create not-found.tsx in that specific component folder 
 like products => [productid] => not-found.tsx
 
+
+*** LAYOUT ***
+Lauout.tsx in root folder of app behave as to general layout that need to display in all screen like header and footer
+to display layout for multiple specific routes create layout.tsx in that specific folder  if we create layout.tsx in Product folder 
+then that JSX will display in all routes that starts with product like product/ProductDetails, product/ProductDetails/1 ...etc
+
+For Group Layout create folder with (folder_name) and add layout.tsx in it now every folder that is present in this folder
+will display this specific layout.
+

@@ -22,12 +22,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+  return (  
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+      <header style={{ fontSize:'5rem' }}>
+        HEADER
+      </header>
         {children}
+        <footer style={{ fontSize:'5rem' }}>
+          FOOTER
+      </footer>
       </body>
     </html>
   );
