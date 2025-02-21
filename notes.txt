@@ -14,6 +14,9 @@ every component should name as page.js or page.tsx in order to make it available
 For nested routes make folder inside folder 
    folder name => blog=>FirstPage(folder)=>page.tsx , route will be available as localhost:3000/blog/FirstPage
 
+Next does not create route of those whose folder name starts with underscore "_" like _blog etc
+these type of folders is used to create helpers functions like _config, _utils => services.ts
+
 For Dynamic nested routes like products/productid (productid can be any like 4 5 or any key string)
     create folder using square bracket inside your screen folder like products => [productid] => page.tsx
     to get productid like we do in react using useparams . In next this id can be provided by default in component props like 
