@@ -1,0 +1,42 @@
+
+
+*** BASICS ***
+
+All components are server components in next by default
+To make a client components in next we need to add ||"use-client" at top level of component
+Hooks can not be used in server components
+
+*** ROUTING ***
+All routes must be placed inside App folder
+every component should name as page.js or page.tsx in order to make it available as route
+   folder name => blog=>page.tsx , route will be available as localhost:3000/blog
+
+For nested routes make folder inside folder 
+   folder name => blog=>FirstPage(folder)=>page.tsx , route will be available as localhost:3000/blog/FirstPage
+
+For Dynamic nested routes like products/productid (productid can be any like 4 5 or any key string)
+    create folder using square bracket inside your screen folder like products => [productid] => page.tsx
+    to get productid like we do in react using useparams . In next this id can be provided by default in component props like 
+    export default function ProductDetails({ params }) { }
+
+If dynamic nested routes is long like docs/feature/feature1/reviews/reviews1.... and go on 
+then we need to create folder structure like folder  => docs => [[...slug]] (can be any name instead of slug)
+if we create folder sith single square brackets [...slug] then localhost:3000/docs will not work but docs/feature/feature1... will work
+to handle this we need add two square  brackets [[...slug]]
+Now params will return an  array of string containing list whatever the nested route is .
+if route is docs/feature/feature1/reviews/reviews1 params will give list like ['feature','feature1','reviews','reviews1' ]
+
+Custom Not Found Route component
+For global not found component add component with name not-found.tsx in app folder with layout.tsx
+
+If scenario is if productid is greater tha n 100 than also show not found component for that
+        import { notFound } from 'next/navigation'
+        export default function ProductDetails({ params } : { params : { productid : string }}) {
+            if(Number(params.productid) > 100){
+                return notFound()
+            }
+            return <h1>Product Details {params.productid}</h1>
+        }
+it will show global not-found component . but in order show specific screen than create not-found.tsx in that specific component folder 
+like products => [productid] => not-found.tsx
+
