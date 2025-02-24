@@ -12,7 +12,7 @@ every component should name as page.js or page.tsx in order to make it available
    folder name => blog=>page.tsx , route will be available as localhost:3000/blog
 
 For nested routes make folder inside folder 
-   folder name => blog=>FirstPage(folder)=>page.tsx , route will be available as localhost:3000/blog/FirstPage
+   folder name ===> blog=>FirstPage=>page.tsx , route will be available as localhost:3000/blog/FirstPage
 
 Next does not create route of those whose folder name starts with underscore "_" like _blog etc
 these type of folders is used to create helpers functions like _config, _utils => services.ts
@@ -23,14 +23,15 @@ For Dynamic nested routes like products/productid (productid can be any like 4 5
     export default function ProductDetails({ params }) { }
 
 If dynamic nested routes is long like docs/feature/feature1/reviews/reviews1.... and go on 
-then we need to create folder structure like folder  => docs => [[...slug]] (can be any name instead of slug)
-if we create folder sith single square brackets [...slug] then localhost:3000/docs will not work but docs/feature/feature1... will work
-to handle this we need add two square  brackets [[...slug]]
-Now params will return an  array of string containing list whatever the nested route is .
-if route is docs/feature/feature1/reviews/reviews1 params will give list like ['feature','feature1','reviews','reviews1' ]
+    then we need to create folder structure like folder  => docs => [[...slug]] (can be any name instead of slug)
+    if we create folder with single square brackets [...slug] then localhost:3000/docs will not work but docs/feature/feature1... will work
+    to handle this we need add two square  brackets [[...slug]]
+    Now params will return an  array of string containing list whatever the nested route is .
+    if route is docs/feature/feature1/reviews/reviews1 params will give list like ['feature','feature1','reviews','reviews1' ]
+    (e.g => docs folder)
 
 Custom Not Found Route component
-For global not found component add component with name not-found.tsx in app folder with layout.tsx
+    For global not found component add component with name not-found.tsx in app folder with layout.tsx
 
 If scenario is if productid is greater tha n 100 than also show not found component for that
         import { notFound } from 'next/navigation'
@@ -42,13 +43,13 @@ If scenario is if productid is greater tha n 100 than also show not found compon
         }
 it will show global not-found component . but in order show specific screen than create not-found.tsx in that specific component folder 
 like products => [productid] => not-found.tsx
-
+Now those routes with products/ANY_INVALID_ROUTE will show this specific not found component
 
 *** LAYOUT ***
-Lauout.tsx in root folder of app behave as to general layout that need to display in all screen like header and footer
+Layout.tsx in root folder of app behave as to general layout that need to display in all screen like header and footer
 to display layout for multiple specific routes create layout.tsx in that specific folder  if we create layout.tsx in Product folder 
 then that JSX will display in all routes that starts with product like product/ProductDetails, product/ProductDetails/1 ...etc
 
 For Group Layout create folder with (folder_name) and add layout.tsx in it now every folder that is present in this folder
-will display this specific layout.
+will display this specific layout. (e.g => product folder)
 

@@ -27,11 +27,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      <header style={{ fontSize:'5rem' }}>
+      <header style={{ fontSize:'2rem' }}>
         HEADER
       </header>
         {children}
-        <footer style={{ fontSize:'5rem' }}>
+        <footer style={{ fontSize:'2rem' }}>
           FOOTER
       </footer>
       </body>
