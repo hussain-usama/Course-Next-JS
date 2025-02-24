@@ -41,9 +41,16 @@ If scenario is if productid is greater tha n 100 than also show not found compon
             }
             return <h1>Product Details {params.productid}</h1>
         }
-it will show global not-found component . but in order show specific screen than create not-found.tsx in that specific component folder 
-like products => [productid] => not-found.tsx
-Now those routes with products/ANY_INVALID_ROUTE will show this specific not found component
+    it will show global not-found component . but in order show specific screen than create not-found.tsx in that specific component folder 
+    like products => [productid] => not-found.tsx
+    Now those routes with products/ANY_INVALID_ROUTE will show this specific not found component
+
+ROUTE ACROSS SCREENS
+In order to navigate across screens use link tag and pass url in href attribute.
+the next/router and next/navigation can't be used in server component to use it we need to change component from server to client.
+Routing and navigation, such as using router.push() or router.replace(), is a client-side operation  that modifies the URL in the browser 
+and updates the history state. Since Server Components run on the server (where there's no browser or history stack),
+they cannot interact with the client-side router directly.
 
 *** LAYOUT ***
 Layout.tsx in root folder of app behave as to general layout that need to display in all screen like header and footer
