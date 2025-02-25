@@ -52,6 +52,12 @@ Routing and navigation, such as using router.push() or router.replace(), is a cl
 and updates the history state. Since Server Components run on the server (where there's no browser or history stack),
 they cannot interact with the client-side router directly.
 
+FILE BASE NAVIGATION
+link tag is used for navigation e.g. <Link href='product/3'>Product 3</Link>
+    if we use replace like <Link href='product/3' replace>Product 3</Link> then when we route back it will redirect to home route
+    because it clear the navigation history of browser
+useRouter is used to navigation as well like const router = useRouter() then router.push(_ROUTE) like in react
+
 *** LAYOUT ***
 Layout.tsx in root folder of app behave as to general layout that need to display in all screen like header and footer
 to display layout for multiple specific routes create layout.tsx in that specific folder  if we create layout.tsx in Product folder 

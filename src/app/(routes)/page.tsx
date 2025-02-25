@@ -14,7 +14,7 @@ export default function Home() {
           height={38}
           priority
         />
-        <Link  href="product/23">View Products</Link>
+        <Link  href="product">View Products</Link>
       </main>
     </div>
   );
