@@ -66,3 +66,17 @@ then that JSX will display in all routes that starts with product like product/P
 For Group Layout create folder with (folder_name) and add layout.tsx in it now every folder that is present in this folder
 will display this specific layout. (e.g => product folder)
 
+*** TEMPLATE.tsx & LAYOUT.tsx ***
+If we have a folder name auth that contains login , register and forget password
+these all components shares common layout.tsx that will appear oall of these routes
+whenver we navigate b/w these routes layout.tsx does not rerender or remounted 
+If we have a textfield in layout.tsx and we fill it with some text from login page and then we route 
+to register page field holds that value of textfield as layout.tsx does not rerender or unmounted when we route from one to another
+so in order to overcome this we can just rename layout.tsx to template.tsx .
+The template.tsx rerendered on each route change.
+We can place both template and layout at a time.
+
+*** LOADING.tsx ***
+Just layout and template behaves as global for specific or global we can add loading.tsx as well.
+it will work  react suspense fallback loader.
+if we place loading.tsx globally and also inside specific folder than global loading will be override.
