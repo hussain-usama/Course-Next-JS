@@ -85,6 +85,7 @@ if we place loading.tsx globally and also inside specific folder than global loa
 Error.tsx behaves as error boundary . It should be a client component
     It can be global if we create it alongside global page.tsx
     It can be component specific aswell if we create it alongside page.tsx of specific folder
+    It will not work if error.tsx and layout.tsx is present on same level
 RESET ERROR FUNCTION
     Just like error.tsx provide error props it also provide reset function props.
     It purpose is to rerender the component again in which error is occured.
