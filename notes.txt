@@ -80,3 +80,8 @@ We can place both template and layout at a time.
 Just layout and template behaves as global for specific or global we can add loading.tsx as well.
 it will work  react suspense fallback loader.
 if we place loading.tsx globally and also inside specific folder than global loading will be override.
+
+*** ERROR.tsx ***
+Error.tsx behaves as error boundary . 
+It can be global if we create it alongside global page.tsx
+It can be component specific aswell if we create it alongside page.tsx of specific folder
