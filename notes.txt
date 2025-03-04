@@ -58,6 +58,16 @@ link tag is used for navigation e.g. <Link href='product/3'>Product 3</Link>
     because it clear the navigation history of browser
 useRouter is used to navigation as well like const router = useRouter() then router.push(_ROUTE) like in react
 
+INTERCEPTING ROUTES
+Let we have a scenario that we are standing on a screen and on that screen we have login button
+when we click on that login a modal should open and route becomes localhost:3000/login and when we refresh
+it route to actual login screen 
+To achieve ne need to create folder with same name starting with (.) like we have a login folder on that same
+level a new folder is created with name (.)login 
+(.) is used to match segments on same level => like f2 and (.)f2 is on same level
+(..) is used to match segments one level above => like (..)f3 is inside another folder and f3 is on its parent folder level
+(...) is used to match segments from root app folder => like if we create (...)blog folder in any inner or upper level it will render this first on routing and original on reload
+
 *** LAYOUT ***
 Layout.tsx in root folder of app behave as to general layout that need to display in all screen like header and footer
 to display layout for multiple specific routes create layout.tsx in that specific folder  if we create layout.tsx in Product folder 
